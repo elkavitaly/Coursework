@@ -102,11 +102,23 @@ namespace Coursework
 		/// <summary>
 		/// Добавление новой марки в список марок.
 		/// </summary>
-		public List<string> ListSource(ListBox listBox, string str)
+		public List<string> ListSource(ListBox listBox, string mark, string discription)
 		{
 			List<string> list = List(listBox);
-			list.Add(str);
+			string res;
+			if (discription == "")
+			{
+				discription = "new";
+			}
+			if (Regex.IsMatch(discription, @"[\,\(\)\;]"))
+			{
+				MessageBox.Show("Неверный формат описания (запрещенные символы: ';' ',' '(' ')' )");
+				return list;
+			}
+			res = mark + " (" + discription + ")";
+			list.Add(res);
 			return list;
+			
 		}
 
 		/// <summary>
@@ -132,15 +144,31 @@ namespace Coursework
 		}
 
 		/// <summary>
+		/// Преобразование выбранного элемента списка в название марки и ее описание.
+		/// </summary>
+		private string[] EditLoad(string value)
+		{
+			string[] result;
+			string[] arr;
+			result = value.Split(new string[] { " (", ")" }, StringSplitOptions.RemoveEmptyEntries);
+			if (result.Length == 1)
+				arr = new string[] { result[0], "" };
+			else
+				arr = result;
+			return arr;
+		}
+
+		/// <summary>
 		/// Добавление марки в список марок.
 		/// </summary>
 		private void aButton_Click(object sender, EventArgs e)
 		{
-			string str = markComboBox.Text;
-			string disc = textBox1.Text;
-			List<string> list = ListSource(markListBox, str);
+			string mark = markComboBox.Text;
+			string discription = textBox1.Text;
+			List<string> list = ListSource(markListBox, mark, discription);
 			textBox1.Text = "";
 			markListBox.DataSource = list;
+			markListBox.SelectionMode = SelectionMode.One;
 		}
 
 		/// <summary>
@@ -177,6 +205,21 @@ namespace Coursework
 		{
 			DialogResult = DialogResult.Cancel;
 			Close();
+		}
+
+		private void eButton_Click(object sender, EventArgs e)
+		{
+			int index = markListBox.SelectedIndex;
+			string value = markListBox.SelectedItem.ToString();
+			string[] res = new string[2];
+			res	= EditLoad(value);
+			markComboBox.Text = res[0];
+			textBox1.Text = res[1];
+			List<string> list = List(markListBox);
+			markListBox.SelectionMode = SelectionMode.None;
+			//list.RemoveAt(index);
+			markListBox.DataSource = list;
+			
 		}
 	}
 }

@@ -46,6 +46,7 @@
 			this.helpProvider1 = new System.Windows.Forms.HelpProvider();
 			this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.eButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// markListBox
@@ -53,14 +54,14 @@
 			this.markListBox.BackColor = System.Drawing.Color.Gainsboro;
 			this.markListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.markListBox.FormattingEnabled = true;
-			this.markListBox.Location = new System.Drawing.Point(122, 225);
+			this.markListBox.Location = new System.Drawing.Point(50, 238);
 			this.markListBox.Name = "markListBox";
-			this.markListBox.Size = new System.Drawing.Size(150, 93);
+			this.markListBox.Size = new System.Drawing.Size(222, 93);
 			this.markListBox.TabIndex = 8;
 			// 
 			// aButton
 			// 
-			this.aButton.Location = new System.Drawing.Point(122, 196);
+			this.aButton.Location = new System.Drawing.Point(50, 209);
 			this.aButton.Name = "aButton";
 			this.aButton.Size = new System.Drawing.Size(70, 23);
 			this.aButton.TabIndex = 6;
@@ -81,7 +82,7 @@
 			// 
 			// okCButton
 			// 
-			this.okCButton.Location = new System.Drawing.Point(57, 324);
+			this.okCButton.Location = new System.Drawing.Point(60, 348);
 			this.okCButton.Name = "okCButton";
 			this.okCButton.Size = new System.Drawing.Size(75, 23);
 			this.okCButton.TabIndex = 9;
@@ -101,7 +102,7 @@
 			// cancelCButton
 			// 
 			this.cancelCButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.cancelCButton.Location = new System.Drawing.Point(138, 324);
+			this.cancelCButton.Location = new System.Drawing.Point(141, 348);
 			this.cancelCButton.Name = "cancelCButton";
 			this.cancelCButton.Size = new System.Drawing.Size(75, 23);
 			this.cancelCButton.TabIndex = 10;
@@ -169,7 +170,7 @@
 			// 
 			// dButton
 			// 
-			this.dButton.Location = new System.Drawing.Point(202, 196);
+			this.dButton.Location = new System.Drawing.Point(202, 209);
 			this.dButton.Name = "dButton";
 			this.dButton.Size = new System.Drawing.Size(70, 23);
 			this.dButton.TabIndex = 7;
@@ -196,11 +197,22 @@
 			this.textBox1.Size = new System.Drawing.Size(150, 20);
 			this.textBox1.TabIndex = 62;
 			// 
+			// eButton
+			// 
+			this.eButton.Location = new System.Drawing.Point(126, 209);
+			this.eButton.Name = "eButton";
+			this.eButton.Size = new System.Drawing.Size(70, 23);
+			this.eButton.TabIndex = 63;
+			this.eButton.Text = "Изменить";
+			this.eButton.UseVisualStyleBackColor = true;
+			this.eButton.Click += new System.EventHandler(this.eButton_Click);
+			// 
 			// EditCol
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 383);
+			this.Controls.Add(this.eButton);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.maskedTextBox1);
 			this.Controls.Add(this.dButton);
@@ -249,5 +261,6 @@
 		private System.Windows.Forms.HelpProvider helpProvider1;
 		private System.Windows.Forms.MaskedTextBox maskedTextBox1;
 		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Button eButton;
 	}
 }

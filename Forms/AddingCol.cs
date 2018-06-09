@@ -70,7 +70,7 @@ namespace Coursework
 		}
 
 		/// <summary>
-		/// Формирование списка марок.
+		/// Формирование списка марок из уже добавленных.
 		/// </summary>
 		public List<string> List(ListBox listBox)
 		{
@@ -83,23 +83,23 @@ namespace Coursework
 		}
 
 		/// <summary>
-		/// Добавление нового элемента в список.
+		/// Добавление нового элемента в список марок.
 		/// </summary>
-		public List<string> ListSource(ListBox listBox, string str, string dis)
+		public List<string> ListSource(ListBox listBox, string mark, string discription)
 		{
 			List<string> list = List(listBox);
 			string res;
-			if (dis == "")
+			if (discription == "")
 			{
-				dis = "new";
+				discription = "new";
 			}
-			res = str + " (" + dis + ")";
+			res = mark + " (" + discription + ")";
 			list.Add(res);
 			return list;
 		}
 
 		/// <summary>
-		/// Преобразование списка в строку.
+		/// Преобразование списка в строку для записи в файл.
 		/// </summary>
 		public string ToString(List<string> list)
 		{
@@ -112,39 +112,19 @@ namespace Coursework
 		}
 
 		/// <summary>
-		/// Добавление элемента в список
+		/// Добавление марки в список.
 		/// </summary>
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string str = comboBox1.Text;
-			string disc = textBox1.Text;
-			List<string> list = ListSource(listBox1, str, disc);
-			textBox1.Text = "";
+			string mark = comboBox1.Text;
+			string discription = textBox1.Text;
+			List<string> list = ListSource(listBox1, mark, discription);
 			listBox1.DataSource = list;
-			
+			textBox1.Text = "";
 		}
 
 		/// <summary>
-		/// Отмена добавления.
-		/// </summary>
-		private void cancelButton_Click(object sender, EventArgs e)
-		{			
-			DialogResult = DialogResult.Cancel;
-			Close();
-		}
-
-		/// <summary>
-		/// Добавление новой записи и закрытие файла.
-		/// </summary>
-		private void okCButton_Click(object sender, EventArgs e)
-		{
-			
-			List<string> list = List(listBox1);
-			Validation(aCName.Text, aCCountry.Text, maskedTextBox1.Text, aCMail.Text, ToString(list));
-		}
-
-		/// <summary>
-		/// Удаление элемента из списка.
+		/// Удаление марки из списка.
 		/// </summary>
 		private void button2_Click(object sender, EventArgs e)
 		{
@@ -159,6 +139,25 @@ namespace Coursework
 			{
 				MessageBox.Show("Элемент не выбран");
 			}
+		}
+
+		/// <summary>
+		/// Добавление новой записи и закрытие файла.
+		/// </summary>
+		private void okCButton_Click(object sender, EventArgs e)
+		{
+			
+			List<string> list = List(listBox1);
+			Validation(aCName.Text, aCCountry.Text, maskedTextBox1.Text, aCMail.Text, ToString(list));
+		}
+
+		/// <summary>
+		/// Отмена добавления.
+		/// </summary>
+		private void cancelButton_Click(object sender, EventArgs e)
+		{
+			DialogResult = DialogResult.Cancel;
+			Close();
 		}
 	}
 }
