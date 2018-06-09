@@ -1,0 +1,16 @@
+D:\C# Projects\Coursework\Coursework\bin\Debug\Coursework.exe.config
+D:\C# Projects\Coursework\Coursework\bin\Debug\Coursework.exe
+D:\C# Projects\Coursework\Coursework\bin\Debug\Coursework.pdb
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.csprojResolveAssemblyReference.cache
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.Properties.Resources.resources
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.csproj.GenerateResource.Cache
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.csproj.CoreCompileInputs.cache
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.exe
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.pdb
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.Main.resources
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.Adding.resources
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.Search.resources
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.AddingCol.resources
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.SearchCol.resources
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.EditCol.resources
+D:\C# Projects\Coursework\Coursework\obj\Debug\Coursework.SearchCollectors.resources
