@@ -86,6 +86,9 @@ namespace Coursework
 				return false;
 		}
 
+		/// <summary>
+		/// Список стран.
+		/// </summary>
 		public string[] CountryList()
 		{
 			MarkList markList = new MarkList();

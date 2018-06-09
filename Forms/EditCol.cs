@@ -36,7 +36,7 @@ namespace Coursework
 			CancelButton = cancelCButton;
 			
 			aCName.Text = name;
-			aCCountry.Text = country;
+			contr.Text = country;
 			maskedTextBox1.Text = phone;
 			aCMail.Text = email;
 			string[] cmarks;
@@ -44,6 +44,7 @@ namespace Coursework
 			List<string> list = new List<string>(cmarks);
 			markComboBox.DataSource = markList.ToNameList();
 			markListBox.DataSource = list;
+			contr.DataSource = CountryList();
 		}
 
 		/// <summary>
@@ -112,7 +113,7 @@ namespace Coursework
 			}
 			if (Regex.IsMatch(discription, @"[\,\(\)\;]"))
 			{
-				MessageBox.Show("Неверный формат описания (запрещенные символы: ';' ',' '(' ')' )");
+				MessageBox.Show("Неверный формат описания\nЗапрещенные символы: ';' ',' '(' ')' ");
 				return list;
 			}
 			res = mark + " (" + discription + ")";
@@ -159,6 +160,22 @@ namespace Coursework
 		}
 
 		/// <summary>
+		/// Список стран.
+		/// </summary>
+		public string[] CountryList()
+		{
+			List<string> result = new List<string>();
+			//List<Collector> collectors = collectorList.collectorList;
+			foreach (Collector m in collectorList.collectorList)
+			{
+				if (result.IndexOf(m.country) == -1)
+					result.Add(m.country);
+			}
+
+			return result.ToArray();
+		}
+
+		/// <summary>
 		/// Добавление марки в список марок.
 		/// </summary>
 		private void aButton_Click(object sender, EventArgs e)
@@ -195,7 +212,7 @@ namespace Coursework
 		private void okCButton_Click(object sender, EventArgs e)
 		{
 			List<string> list = List(markListBox);
-			Validation(aCName.Text, aCCountry.Text, maskedTextBox1.Text, aCMail.Text, ToString(list));
+			Validation(aCName.Text, contr.Text, maskedTextBox1.Text, aCMail.Text, ToString(list));
 		}
 
 		/// <summary>
@@ -217,7 +234,7 @@ namespace Coursework
 			textBox1.Text = res[1];
 			List<string> list = List(markListBox);
 			markListBox.SelectionMode = SelectionMode.None;
-			//list.RemoveAt(index);
+			list.RemoveAt(index);
 			markListBox.DataSource = list;
 			
 		}

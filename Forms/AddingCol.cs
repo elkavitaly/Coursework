@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +27,7 @@ namespace Coursework
 			AcceptButton = okCButton;
 			CancelButton = cancelCButton;
 			comboBox1.DataSource = markList.ToNameList();
+			comboBox2.DataSource = CountryList();
 			
 		}
 
@@ -37,7 +38,7 @@ namespace Coursework
 		{
 			if (!Regex.IsMatch(name, @"^[a-zA-Z](([a-zA-Z-]|\s){2,32})$"))
 			{
-				MessageBox.Show("Неверный формат названия");
+				MessageBox.Show("Неверный формат имени");
 				return;
 			}
 			if (!Regex.IsMatch(country, @"^[a-zA-Z]([a-zA-Z\-]{0,30})[a-zA-Z]$"))
@@ -93,6 +94,11 @@ namespace Coursework
 			{
 				discription = "new";
 			}
+			if (Regex.IsMatch(discription, @"[,\(\)\;]"))
+			{
+				MessageBox.Show("Неверный формат описания\nЗапрещенные символы: ';' ',' '(' ')' ");
+				return list;
+			}
 			res = mark + " (" + discription + ")";
 			list.Add(res);
 			return list;
@@ -109,6 +115,23 @@ namespace Coursework
 				arr[i] = list[i];
 			}
 			return String.Join(", ", arr);
+		}
+
+		/// <summary>
+		/// Список стран.
+		/// </summary>
+		public string[] CountryList()
+		{
+			CollectorList colList = new CollectorList();
+			List<string> result = new List<string>();
+			List<Collector> collectors = colList.collectorList;
+			foreach (Collector m in collectors)
+			{
+				if (result.IndexOf(m.country) == -1)
+					result.Add(m.country);
+			}
+
+			return result.ToArray();
 		}
 
 		/// <summary>
@@ -148,7 +171,7 @@ namespace Coursework
 		{
 			
 			List<string> list = List(listBox1);
-			Validation(aCName.Text, aCCountry.Text, maskedTextBox1.Text, aCMail.Text, ToString(list));
+			Validation(aCName.Text, comboBox2.Text, maskedTextBox1.Text, aCMail.Text, ToString(list));
 		}
 
 		/// <summary>

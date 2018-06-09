@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchCollectors));
 			this.TableSearch = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +45,7 @@
 			this.TableSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
 			this.TableSearch.BackgroundColor = System.Drawing.Color.Gainsboro;
 			this.TableSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.TableSearch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
 			this.TableSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.TableSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -53,11 +55,12 @@
             this.Column5});
 			this.TableSearch.GridColor = System.Drawing.Color.WhiteSmoke;
 			this.TableSearch.Location = new System.Drawing.Point(12, 30);
-			this.TableSearch.MaximumSize = new System.Drawing.Size(547, 201);
+			this.TableSearch.MaximumSize = new System.Drawing.Size(590, 201);
 			this.TableSearch.MinimumSize = new System.Drawing.Size(547, 201);
 			this.TableSearch.Name = "TableSearch";
 			this.TableSearch.ReadOnly = true;
-			this.TableSearch.Size = new System.Drawing.Size(547, 201);
+			this.TableSearch.RowHeadersVisible = false;
+			this.TableSearch.Size = new System.Drawing.Size(590, 201);
 			this.TableSearch.TabIndex = 8;
 			// 
 			// Column1
@@ -71,6 +74,7 @@
 			this.Column2.HeaderText = "Страна";
 			this.Column2.Name = "Column2";
 			this.Column2.ReadOnly = true;
+			this.Column2.Width = 70;
 			// 
 			// Column3
 			// 
@@ -89,19 +93,22 @@
 			this.Column5.HeaderText = "Коллекция";
 			this.Column5.Name = "Column5";
 			this.Column5.ReadOnly = true;
+			this.Column5.Width = 218;
 			// 
 			// SearchCollectors
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(571, 243);
+			this.BackColor = System.Drawing.Color.Gainsboro;
+			this.ClientSize = new System.Drawing.Size(614, 243);
 			this.Controls.Add(this.TableSearch);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(587, 282);
+			this.MaximumSize = new System.Drawing.Size(630, 282);
 			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(587, 282);
 			this.Name = "SearchCollectors";
-			this.Text = "SearchCollectors";
+			this.Text = "Поиск в коллекциях";
 			((System.ComponentModel.ISupportInitialize)(this.TableSearch)).EndInit();
 			this.ResumeLayout(false);
 

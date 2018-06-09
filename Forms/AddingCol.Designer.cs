@@ -36,7 +36,6 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.aCMail = new System.Windows.Forms.TextBox();
-			this.aCCountry = new System.Windows.Forms.TextBox();
 			this.aCName = new System.Windows.Forms.TextBox();
 			this.okCButton = new System.Windows.Forms.Button();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -46,6 +45,7 @@
 			this.helpProvider1 = new System.Windows.Forms.HelpProvider();
 			this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// country
@@ -110,13 +110,6 @@
 			this.aCMail.Name = "aCMail";
 			this.aCMail.Size = new System.Drawing.Size(146, 20);
 			this.aCMail.TabIndex = 4;
-			// 
-			// aCCountry
-			// 
-			this.aCCountry.Location = new System.Drawing.Point(123, 60);
-			this.aCCountry.Name = "aCCountry";
-			this.aCCountry.Size = new System.Drawing.Size(146, 20);
-			this.aCCountry.TabIndex = 2;
 			// 
 			// aCName
 			// 
@@ -195,12 +188,21 @@
 			this.textBox1.Size = new System.Drawing.Size(146, 20);
 			this.textBox1.TabIndex = 46;
 			// 
+			// comboBox2
+			// 
+			this.comboBox2.FormattingEnabled = true;
+			this.comboBox2.Location = new System.Drawing.Point(123, 58);
+			this.comboBox2.Name = "comboBox2";
+			this.comboBox2.Size = new System.Drawing.Size(146, 21);
+			this.comboBox2.TabIndex = 2;
+			// 
 			// AddingCol
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Gainsboro;
 			this.ClientSize = new System.Drawing.Size(284, 358);
+			this.Controls.Add(this.comboBox2);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.maskedTextBox1);
 			this.Controls.Add(this.button2);
@@ -215,7 +217,6 @@
 			this.Controls.Add(this.label11);
 			this.Controls.Add(this.label12);
 			this.Controls.Add(this.aCMail);
-			this.Controls.Add(this.aCCountry);
 			this.Controls.Add(this.aCName);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
@@ -238,7 +239,6 @@
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label12;
 		protected System.Windows.Forms.TextBox aCMail;
-		protected System.Windows.Forms.TextBox aCCountry;
 		public System.Windows.Forms.TextBox aCName;
 		private System.Windows.Forms.Button okCButton;
 		private System.Windows.Forms.ComboBox comboBox1;
@@ -248,5 +248,6 @@
 		private System.Windows.Forms.HelpProvider helpProvider1;
 		private System.Windows.Forms.MaskedTextBox maskedTextBox1;
 		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.ComboBox comboBox2;
 	}
 }

@@ -30,21 +30,24 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchCol));
 			this.SearchCData = new System.Windows.Forms.DataGridView();
+			this.searchCButton = new System.Windows.Forms.Button();
+			this.searchCTextBox = new System.Windows.Forms.TextBox();
+			this.helpProvider1 = new System.Windows.Forms.HelpProvider();
 			this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.country = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.marks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.searchCButton = new System.Windows.Forms.Button();
-			this.searchCTextBox = new System.Windows.Forms.TextBox();
-			this.helpProvider1 = new System.Windows.Forms.HelpProvider();
 			((System.ComponentModel.ISupportInitialize)(this.SearchCData)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// SearchCData
 			// 
-			this.SearchCData.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+			this.SearchCData.AllowUserToAddRows = false;
+			this.SearchCData.AllowUserToDeleteRows = false;
+			this.SearchCData.BackgroundColor = System.Drawing.Color.Gainsboro;
 			this.SearchCData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.SearchCData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
 			this.SearchCData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.SearchCData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -52,36 +55,13 @@
             this.phone,
             this.email,
             this.marks});
-			this.SearchCData.GridColor = System.Drawing.Color.LightGray;
+			this.SearchCData.GridColor = System.Drawing.Color.WhiteSmoke;
 			this.SearchCData.Location = new System.Drawing.Point(12, 62);
 			this.SearchCData.Name = "SearchCData";
+			this.SearchCData.ReadOnly = true;
+			this.SearchCData.RowHeadersVisible = false;
 			this.SearchCData.Size = new System.Drawing.Size(541, 200);
 			this.SearchCData.TabIndex = 3;
-			// 
-			// name
-			// 
-			this.name.HeaderText = "Имя";
-			this.name.Name = "name";
-			// 
-			// country
-			// 
-			this.country.HeaderText = "Страна";
-			this.country.Name = "country";
-			// 
-			// phone
-			// 
-			this.phone.HeaderText = "Телефон";
-			this.phone.Name = "phone";
-			// 
-			// email
-			// 
-			this.email.HeaderText = "Почта";
-			this.email.Name = "email";
-			// 
-			// marks
-			// 
-			this.marks.HeaderText = "Марки";
-			this.marks.Name = "marks";
 			// 
 			// searchCButton
 			// 
@@ -104,6 +84,38 @@
 			// helpProvider1
 			// 
 			this.helpProvider1.HelpNamespace = "D:\\C# Projects\\Coursework\\Info.html";
+			// 
+			// name
+			// 
+			this.name.HeaderText = "Имя";
+			this.name.Name = "name";
+			this.name.ReadOnly = true;
+			// 
+			// country
+			// 
+			this.country.HeaderText = "Страна";
+			this.country.Name = "country";
+			this.country.ReadOnly = true;
+			this.country.Width = 70;
+			// 
+			// phone
+			// 
+			this.phone.HeaderText = "Телефон";
+			this.phone.Name = "phone";
+			this.phone.ReadOnly = true;
+			// 
+			// email
+			// 
+			this.email.HeaderText = "Почта";
+			this.email.Name = "email";
+			this.email.ReadOnly = true;
+			// 
+			// marks
+			// 
+			this.marks.HeaderText = "Марки";
+			this.marks.Name = "marks";
+			this.marks.ReadOnly = true;
+			this.marks.Width = 170;
 			// 
 			// SearchCol
 			// 
@@ -130,13 +142,13 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView SearchCData;
+		private System.Windows.Forms.Button searchCButton;
+		private System.Windows.Forms.TextBox searchCTextBox;
+		private System.Windows.Forms.HelpProvider helpProvider1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn name;
 		private System.Windows.Forms.DataGridViewTextBoxColumn country;
 		private System.Windows.Forms.DataGridViewTextBoxColumn phone;
 		private System.Windows.Forms.DataGridViewTextBoxColumn email;
 		private System.Windows.Forms.DataGridViewTextBoxColumn marks;
-		private System.Windows.Forms.Button searchCButton;
-		private System.Windows.Forms.TextBox searchCTextBox;
-		private System.Windows.Forms.HelpProvider helpProvider1;
 	}
 }

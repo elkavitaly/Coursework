@@ -75,7 +75,11 @@ namespace Coursework
 		/// </summary>
 		private void searchCButton_Click(object sender, EventArgs e)
 		{
-			SearchC(searchCTextBox.Text);
+			try
+			{
+				SearchC(searchCTextBox.Text);
+			}
+			catch (Exception) { }
 		}
 
 		/// <summary>
@@ -93,7 +97,7 @@ namespace Coursework
 				else
 					SearchCData.Rows.Clear();
 			}
-			catch (ArgumentException)
+			catch (Exception)
 			{
 
 			}

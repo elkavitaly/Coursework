@@ -30,22 +30,25 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search));
 			this.SearchData = new System.Windows.Forms.DataGridView();
+			this.searchButton = new System.Windows.Forms.Button();
+			this.searchTextBox = new System.Windows.Forms.TextBox();
+			this.helpProvider1 = new System.Windows.Forms.HelpProvider();
 			this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.feature = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.country = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.edition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.searchButton = new System.Windows.Forms.Button();
-			this.searchTextBox = new System.Windows.Forms.TextBox();
-			this.helpProvider1 = new System.Windows.Forms.HelpProvider();
 			((System.ComponentModel.ISupportInitialize)(this.SearchData)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// SearchData
 			// 
-			this.SearchData.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+			this.SearchData.AllowUserToAddRows = false;
+			this.SearchData.AllowUserToDeleteRows = false;
+			this.SearchData.BackgroundColor = System.Drawing.Color.Gainsboro;
 			this.SearchData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.SearchData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
 			this.SearchData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.SearchData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -54,47 +57,13 @@
             this.feature,
             this.country,
             this.edition});
-			this.SearchData.GridColor = System.Drawing.Color.LightGray;
+			this.SearchData.GridColor = System.Drawing.Color.WhiteSmoke;
 			this.SearchData.Location = new System.Drawing.Point(12, 82);
 			this.SearchData.Name = "SearchData";
+			this.SearchData.ReadOnly = true;
+			this.SearchData.RowHeadersVisible = false;
 			this.SearchData.Size = new System.Drawing.Size(641, 265);
 			this.SearchData.TabIndex = 3;
-			// 
-			// name
-			// 
-			this.name.HeaderText = "Название";
-			this.name.MinimumWidth = 50;
-			this.name.Name = "name";
-			// 
-			// price
-			// 
-			this.price.HeaderText = "Стоимость";
-			this.price.MinimumWidth = 50;
-			this.price.Name = "price";
-			// 
-			// year
-			// 
-			this.year.HeaderText = "Год выпуска";
-			this.year.MinimumWidth = 50;
-			this.year.Name = "year";
-			// 
-			// feature
-			// 
-			this.feature.HeaderText = "Особенности";
-			this.feature.MinimumWidth = 50;
-			this.feature.Name = "feature";
-			// 
-			// country
-			// 
-			this.country.HeaderText = "Страна";
-			this.country.MinimumWidth = 50;
-			this.country.Name = "country";
-			// 
-			// edition
-			// 
-			this.edition.HeaderText = "Тираж";
-			this.edition.MinimumWidth = 50;
-			this.edition.Name = "edition";
 			// 
 			// searchButton
 			// 
@@ -117,6 +86,49 @@
 			// helpProvider1
 			// 
 			this.helpProvider1.HelpNamespace = "D:\\C# Projects\\Coursework\\Info.html";
+			// 
+			// name
+			// 
+			this.name.HeaderText = "Название";
+			this.name.MinimumWidth = 50;
+			this.name.Name = "name";
+			this.name.ReadOnly = true;
+			// 
+			// price
+			// 
+			this.price.HeaderText = "Стоимость";
+			this.price.MinimumWidth = 50;
+			this.price.Name = "price";
+			this.price.ReadOnly = true;
+			// 
+			// year
+			// 
+			this.year.HeaderText = "Год выпуска";
+			this.year.MinimumWidth = 50;
+			this.year.Name = "year";
+			this.year.ReadOnly = true;
+			// 
+			// feature
+			// 
+			this.feature.HeaderText = "Особенности";
+			this.feature.MinimumWidth = 50;
+			this.feature.Name = "feature";
+			this.feature.ReadOnly = true;
+			this.feature.Width = 140;
+			// 
+			// country
+			// 
+			this.country.HeaderText = "Страна";
+			this.country.MinimumWidth = 50;
+			this.country.Name = "country";
+			this.country.ReadOnly = true;
+			// 
+			// edition
+			// 
+			this.edition.HeaderText = "Тираж";
+			this.edition.MinimumWidth = 50;
+			this.edition.Name = "edition";
+			this.edition.ReadOnly = true;
 			// 
 			// Search
 			// 
@@ -145,12 +157,12 @@
 		protected System.Windows.Forms.DataGridView SearchData;
 		private System.Windows.Forms.Button searchButton;
 		private System.Windows.Forms.TextBox searchTextBox;
+		private System.Windows.Forms.HelpProvider helpProvider1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn name;
 		private System.Windows.Forms.DataGridViewTextBoxColumn price;
 		private System.Windows.Forms.DataGridViewTextBoxColumn year;
 		private System.Windows.Forms.DataGridViewTextBoxColumn feature;
 		private System.Windows.Forms.DataGridViewTextBoxColumn country;
 		private System.Windows.Forms.DataGridViewTextBoxColumn edition;
-		private System.Windows.Forms.HelpProvider helpProvider1;
 	}
 }

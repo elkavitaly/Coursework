@@ -80,8 +80,11 @@ namespace Coursework
 		/// </summary>
 		private void searchButton_Click(object sender, EventArgs e)
 		{
-
-			SearchM(searchTextBox.Text);
+			try
+			{
+				SearchM(searchTextBox.Text);
+			}
+			catch (Exception) { }
 		}
 
 		/// <summary>
@@ -89,13 +92,17 @@ namespace Coursework
 		/// </summary>
 		private void searchTextBox_TextChanged(object sender, EventArgs e)
 		{
-			if (searchTextBox.Text != "")
+			try
 			{
-				SearchData.Rows.Clear();
-				SearchM(searchTextBox.Text);
+				if (searchTextBox.Text != "")
+				{
+					SearchData.Rows.Clear();
+					SearchM(searchTextBox.Text);
+				}
+				else
+					SearchData.Rows.Clear();
 			}
-			else
-				SearchData.Rows.Clear();
+			catch (Exception) { }
 		}
 
 	}
